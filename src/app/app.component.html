@@ -1,0 +1,25 @@
+<div class="container">
+  <main class="col-12">
+    
+        <table class="table">
+  <thead>
+    <tr >
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [formGroup]="rowFormGroup" *ngFor="let rowFormGroup of sheetFormGroup.controls.rows.controls">
+      <th scope="row"><input type="text" formControlName="name" class="form-control"  /></th>
+      <td><input type="text" formControlName="quantity" class="form-control"  /></td>
+      <td><input type="text" formControlName="purchasePrice" class="form-control"  /></td>
+      <td><input type="text" formControlName="cost" class="form-control" readonly="true"  /></td>
+    </tr>
+  </tbody>
+</table>
+{{sheetData.totalCost}}
+<button class="btn btn-primary" (click)="addRow()">Add Row</button>
+  </main>
+</div>
